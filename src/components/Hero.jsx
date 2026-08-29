@@ -1,100 +1,97 @@
 import Btn from './Btn'
-import Mascot from './Mascot'
 import Particles from './Particles'
+import SmokeLayer from './SmokeLayer'
 import { DISCORD_URL } from '../config'
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Background: ruined kingdom */}
+    <section id="inicio" className="relative flex min-h-screen flex-col overflow-hidden">
+      {/* ---- Background: official banner (ruined kingdom) ---- */}
       <div className="absolute inset-0 -z-20">
-        {/* Tattered banners */}
-        <div className="absolute -left-6 top-24 hidden md:block h-64 w-16 opacity-60">
-          <div className="h-10 w-full bg-gradient-to-b from-gold-800 to-gold-600" />
-          <div className="h-full w-full bg-coal-800/80 border-x border-gold-700/40" style={{ clipPath: 'polygon(30% 0, 70% 3%, 60% 40%, 45% 35%, 65% 70%, 40% 62%, 55% 100%, 35% 70%)' }} />
-        </div>
-        <div className="absolute right-6 top-32 hidden md:block h-72 w-16 opacity-60 rotate-3">
-          <div className="h-10 w-full bg-gradient-to-b from-gold-800 to-gold-600" />
-          <div className="h-full w-full bg-coal-800/80 border-x border-gold-700/40" style={{ clipPath: 'polygon(30% 0, 70% 3%, 60% 40%, 45% 35%, 65% 70%, 40% 62%, 55% 100%, 35% 70%)' }} />
-        </div>
+        <img
+          src="images/banner.png"
+          alt=""
+          aria-hidden="true"
+          fetchPriority="high"
+          decoding="async"
+          className="h-full w-full object-cover object-center"
+        />
+        {/* Opacity grade — manter fundo escuro e suave */}
+        <div className="absolute inset-0 bg-coal-950/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,7,7,0.35)_55%,#070707_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-coal-950/80 via-transparent to-coal-950" />
       </div>
 
-      {/* Rocky ruins / castle silhouette */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-64 opacity-30">
-        <svg viewBox="0 0 1600 300" preserveAspectRatio="none" className="h-full w-full text-coal-700">
-          <path fill="currentColor" d="M0 300 L0 240 L90 200 L120 260 L200 170 L260 230 L330 140 L400 220 L470 170 L540 250 L620 160 L700 240 L760 190 L830 260 L900 180 L980 250 L1050 150 L1120 240 L1200 170 L1280 250 L1360 180 L1440 240 L1520 190 L1600 250 L1600 300 Z" />
-        </svg>
-      </div>
+      {/* ---- Foreground atmosphere ---- */}
+      <SmokeLayer />
+      <Particles count={45} />
 
-      {/* Smoke / fog drift */}
-      <div className="pointer-events-none absolute inset-0 -z-10 opacity-40">
-        <div className="absolute -left-1/4 top-1/3 h-96 w-96 rounded-full bg-silver-500/10 blur-3xl" style={{ animation: 'ambient 14s ease-in-out infinite' }} />
-        <div className="absolute -right-1/4 top-1/2 h-120 w-120 rounded-full bg-gold-600/10 blur-3xl" style={{ animation: 'ambient 18s ease-in-out infinite' }} />
-      </div>
+      {/* ---- Content ---- */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col items-center justify-center px-5 pt-28 pb-16 text-center sm:px-8">
 
-      <Particles count={40} />
+        {/* <Centered lockup> */}
+        <p
+          className="mb-3 font-display text-[10px] sm:text-xs uppercase tracking-[0.5em] text-silver-400 animate-rise"
+          style={{ animationDelay: '0.1s' }}
+        >
+          Guilda de Albion Online
+        </p>
 
-      {/* Dark vignette */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(8,8,8,0.55)_70%,#080808_100%)]" />
+        <h1
+          className="font-display font-black leading-none animate-rise"
+          style={{ animationDelay: '0.2s' }}
+        >
+          <span className="block text-6xl sm:text-8xl lg:text-[9.5rem] tracking-tight gold-forged">
+            BROKEN
+          </span>
+          <span className="block text-6xl sm:text-8xl lg:text-[8.5rem] tracking-[0.06em] silver-forged">
+            CROWN
+          </span>
+        </h1>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 pb-24 pt-32 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-4 lg:pt-24">
-        {/* Left: text */}
-        <div className="text-center lg:text-left">
-          <div className="mb-6 flex items-center justify-center gap-3 lg:justify-start">
-            <span className="h-px w-10 bg-gold-500/60" />
-            <span className="font-display text-[11px] sm:text-xs tracking-[0.4em] uppercase text-silver-400">
-              Guilda de Albion Online
-            </span>
-            <span className="h-px w-10 bg-gold-500/60" />
+        <p
+          className="mt-6 font-display text-sm sm:text-base tracking-[0.35em] uppercase text-gold-300 animate-rise"
+          style={{ animationDelay: '0.35s' }}
+        >
+          The Crown Fell. We Rose.
+        </p>
+        <div className="my-5 h-px w-24 bg-gradient-to-r from-transparent via-gold-500/70 to-transparent animate-rise" style={{ animationDelay: '0.4s' }} />
+
+        {/* ---- Mascot protagonist ---- */}
+        <div className="relative my-4 flex w-full justify-center animate-rise" style={{ animationDelay: '0.5s' }}>
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <div className="h-[420px] w-[320px] rounded-full bg-gold-500/10 blur-3xl" />
           </div>
-
-          <h1 className="font-display font-black leading-none">
-            <span className="block text-6xl sm:text-8xl lg:text-9xl tracking-tight gold-gradient-text animate-rise">
-              BROKEN
-            </span>
-            <span className="block text-6xl sm:text-8xl lg:text-9xl tracking-[0.08em] text-silver-100 animate-rise carved-text" style={{ animationDelay: '0.15s' }}>
-              CROWN
-            </span>
-          </h1>
-
-          <p
-            className="mt-6 font-display text-sm sm:text-base tracking-[0.3em] uppercase text-gold-400 animate-rise"
-            style={{ animationDelay: '0.3s' }}
-          >
-            The Crown Fell. We Rose.
-          </p>
-
-          <p
-            className="mx-auto mt-5 max-w-xl font-serif text-lg sm:text-xl italic text-silver-300/90 animate-rise lg:mx-0"
-            style={{ animationDelay: '0.4s' }}
-          >
-            Uma guilda forjada na união, onde novatos e veteranos evoluem juntos.
-          </p>
-
-          <div
-            className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start animate-rise"
-            style={{ animationDelay: '0.55s' }}
-          >
-            <Btn href={DISCORD_URL} target="_blank" rel="noopener noreferrer" variant="gold" size="lg" className="w-full sm:w-auto">
-              Entrar no Discord
-            </Btn>
-            <Btn href="#guilda" variant="outline" size="lg" className="w-full sm:w-auto">
-              Conhecer a Guilda
-            </Btn>
-          </div>
+          <img
+            src="images/mascote.png"
+            alt="Guerreiro-mascarado da Broken Crown usando a coroa quebrada"
+            width="1151"
+            height="1367"
+            loading="lazy"
+            decoding="async"
+            className="relative z-10 h-[45vh] max-h-[520px] min-h-[260px] w-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)] animate-float"
+          />
         </div>
 
-        {/* Right: mascot */}
-        <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none animate-float">
-          <div className="hidden sm:block absolute -z-10 inset-0 flex items-center justify-center">
-            <div className="h-72 w-72 rounded-full bg-gold-500/10 blur-3xl" />
-          </div>
-          <Mascot className="mx-auto max-w-xs sm:max-w-sm lg:max-w-md" />
+        <p className="max-w-xl font-serif text-lg sm:text-xl italic text-silver-300/90 animate-rise" style={{ animationDelay: '0.6s' }}>
+          Uma guilda forjada na união, onde novatos e veteranos evoluem juntos.
+        </p>
+
+        <div
+          className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row animate-rise"
+          style={{ animationDelay: '0.7s' }}
+        >
+          <Btn href={DISCORD_URL} target="_blank" rel="noopener noreferrer" variant="gold" size="lg" className="w-full sm:w-auto">
+            Entrar no Discord
+          </Btn>
+          <Btn href="#guilda" variant="outline" size="lg" className="w-full sm:w-auto">
+            Conhecer a Guilda
+          </Btn>
         </div>
       </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex">
+      {/* ---- Scroll hint ---- */}
+      <div className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-2 sm:flex">
         <span className="font-display text-[10px] tracking-[0.4em] uppercase text-silver-500">Desça</span>
         <span className="h-8 w-px animate-pulse bg-gold-500/60" />
       </div>
