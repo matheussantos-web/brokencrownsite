@@ -1,4 +1,4 @@
-import CrownLogo from './CrownLogo'
+import BrokenCrownEmblem from './BrokenCrownEmblem'
 
 const LINKS = [
   { href: '#inicio', label: 'Início' },
@@ -17,11 +17,12 @@ export default function Footer() {
 
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="flex flex-col items-center text-center">
-          <CrownLogo className="h-16 w-16 mb-5" id="foot" />
-          <h3 className="font-display text-2xl sm:text-3xl font-black tracking-[0.2em] gold-gradient-text">
-            BROKEN CROWN
+          <BrokenCrownEmblem className="h-16 w-16 mb-5" id="foot" />
+          <h3 className="font-display text-3xl sm:text-4xl font-black leading-none">
+            <span className="block tracking-[0.2em] silver-forged">BROKEN</span>
+            <span className="block mt-1 tracking-[0.2em] gold-forged">CROWN</span>
           </h3>
-          <p className="mt-3 font-display text-xs sm:text-sm tracking-[0.35em] uppercase text-silver-400">
+          <p className="mt-4 font-display text-xs sm:text-sm tracking-[0.35em] uppercase text-silver-400">
             The Crown Fell. We Rose.
           </p>
         </div>

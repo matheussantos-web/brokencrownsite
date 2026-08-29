@@ -1,4 +1,4 @@
-import CrownLogo from './CrownLogo'
+import BrokenCrownEmblem from './BrokenCrownEmblem'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
@@ -56,7 +56,7 @@ export default function Hall() {
               </div>
 
               <div className="mt-10 flex flex-col items-center gap-3">
-                <CrownLogo className="h-10 w-10 opacity-60 animate-flicker" id="hall" />
+                <BrokenCrownEmblem className="h-10 w-10 opacity-60 animate-flicker" id="hall" />
                 <p className="font-display text-sm uppercase tracking-[0.4em] text-gold-400">
                   Em Construção
                 </p>

@@ -42,10 +42,10 @@ export default function Hero() {
           className="font-display font-black leading-none animate-rise"
           style={{ animationDelay: '0.2s' }}
         >
-          <span className="block text-6xl sm:text-8xl lg:text-[9.5rem] tracking-tight gold-forged">
+          <span className="block text-6xl sm:text-8xl lg:text-[9.5rem] tracking-tight silver-forged">
             BROKEN
           </span>
-          <span className="block text-6xl sm:text-8xl lg:text-[8.5rem] tracking-[0.06em] silver-forged">
+          <span className="block text-6xl sm:text-8xl lg:text-[8.5rem] tracking-[0.06em] gold-forged">
             CROWN
           </span>
         </h1>

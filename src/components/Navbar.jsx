@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import CrownLogo from './CrownLogo'
+import BrokenCrownEmblem from './BrokenCrownEmblem'
 import { DISCORD_URL } from '../config'
 
 const LINKS = [
@@ -30,12 +30,12 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
         <a href="#inicio" className="flex items-center gap-3">
-          <CrownLogo className="h-10 w-10 sm:h-12 sm:w-12" id="nav" />
+          <BrokenCrownEmblem className="h-10 w-10 sm:h-12 sm:w-12" id="nav" />
           <div className="leading-none">
-            <span className="font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-gold-400">
+            <span className="font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-silver-300">
               BROKEN
             </span>
-            <span className="block font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-silver-300">
+            <span className="block font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-gold-400">
               CROWN
             </span>
           </div>

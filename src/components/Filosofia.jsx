@@ -1,4 +1,4 @@
-import CrownLogo from './CrownLogo'
+import BrokenCrownEmblem from './BrokenCrownEmblem'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 
@@ -55,7 +55,7 @@ export default function Filosofia() {
                   <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold-600/50 bg-coal-950 text-gold-400 shadow-[0_0_30px_rgba(212,175,55,0.15)] transition-all duration-500 group-hover:text-gold-300">
                     {p.icon}
                   </div>
-                  <CrownLogo className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 opacity-70" />
+                  <BrokenCrownEmblem className="absolute -top-3 left-1/2 h-6 w-6 -translate-x-1/2 opacity-70" id="pillar" />
                 </div>
 
                 <h3 className="font-display text-2xl font-bold uppercase tracking-[0.15em] text-gold-300">
