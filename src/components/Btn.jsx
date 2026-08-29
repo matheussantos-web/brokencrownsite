@@ -28,6 +28,15 @@ export default function Btn({
     ghost:
       'text-silver-300 border border-silver-600/40 bg-coal-900/30 ' +
       'hover:border-silver-400 hover:text-white hover:bg-white/5',
+    'hero-gold':
+      'text-coal-950 bg-gradient-to-b from-gold-200 via-gold-400 to-gold-600 ' +
+      'border border-gold-300/90 ' +
+      'shadow-[0_0_0_1px_rgba(247,233,176,0.35),0_8px_30px_rgba(0,0,0,0.55),0_0_45px_rgba(212,175,55,0.4),inset_0_1px_0_rgba(255,255,255,0.75)] ' +
+      'hover:shadow-[0_0_0_1px_rgba(247,233,176,0.55),0_10px_40px_rgba(0,0,0,0.6),0_0_70px_rgba(212,175,55,0.6),inset_0_1px_0_rgba(255,255,255,0.75)] hover:brightness-110',
+    'hero-outline':
+      'text-silver-200 border border-gold-500/70 bg-coal-950/60 backdrop-blur-sm ' +
+      'shadow-[0_4px_24px_rgba(0,0,0,0.6),inset_0_0_24px_rgba(0,0,0,0.55)] ' +
+      'hover:border-gold-300 hover:text-white hover:bg-gold-500/10 hover:shadow-[0_6px_30px_rgba(0,0,0,0.65),0_0_40px_rgba(212,175,55,0.25)]',
   }
 
   return (

@@ -68,7 +68,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="max-w-xl font-serif text-lg sm:text-xl italic text-silver-300/90 animate-rise" style={{ animationDelay: '0.6s' }}>
+        <p
+          className="max-w-xl font-serif text-lg sm:text-xl italic text-silver-200 animate-rise"
+          style={{
+            animationDelay: '0.6s',
+            textShadow:
+              '0 1px 2px rgba(0,0,0,0.9), 0 2px 6px rgba(0,0,0,0.75), 0 0 18px rgba(0,0,0,0.55)',
+          }}
+        >
           Uma guilda forjada na união, onde novatos e veteranos evoluem juntos.
         </p>
 
@@ -76,10 +83,10 @@ export default function Hero() {
           className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row animate-rise"
           style={{ animationDelay: '0.7s' }}
         >
-          <Btn href={DISCORD_URL} target="_blank" rel="noopener noreferrer" variant="gold" size="lg" className="w-full sm:w-auto">
+          <Btn href={DISCORD_URL} target="_blank" rel="noopener noreferrer" variant="hero-gold" size="lg" className="w-full sm:w-auto">
             Entrar no Discord
           </Btn>
-          <Btn href="#guilda" variant="outline" size="lg" className="w-full sm:w-auto">
+          <Btn href="#guilda" variant="hero-outline" size="lg" className="w-full sm:w-auto">
             Conhecer a Guilda
           </Btn>
         </div>
