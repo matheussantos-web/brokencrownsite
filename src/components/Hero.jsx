@@ -1,4 +1,5 @@
 import Btn from './Btn'
+import Mascot from './Mascot'
 import Particles from './Particles'
 import SmokeLayer from './SmokeLayer'
 import { DISCORD_URL } from '../config'
@@ -57,20 +58,14 @@ export default function Hero() {
         </p>
         <div className="my-5 h-px w-24 bg-gradient-to-r from-transparent via-gold-500/70 to-transparent animate-rise" style={{ animationDelay: '0.4s' }} />
 
-        {/* ---- Mascot protagonist ---- */}
-        <div className="relative my-4 flex w-full justify-center animate-rise" style={{ animationDelay: '0.5s' }}>
+        {/* ---- Mascote protagonista (imagem oficial) ---- */}
+        <div className="relative my-2 flex w-full justify-center animate-rise" style={{ animationDelay: '0.5s' }}>
           <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="h-[420px] w-[320px] rounded-full bg-gold-500/10 blur-3xl" />
+            <div className="h-[60vh] w-[46vh] rounded-full bg-gold-500/15 blur-3xl" />
           </div>
-          <img
-            src="images/mascote.png"
-            alt="Guerreiro-mascarado da Broken Crown usando a coroa quebrada"
-            width="1151"
-            height="1367"
-            loading="lazy"
-            decoding="async"
-            className="relative z-10 h-[45vh] max-h-[520px] min-h-[260px] w-auto object-contain drop-shadow-[0_25px_45px_rgba(0,0,0,0.8)] animate-float"
-          />
+          <div className="relative z-10 h-[48vh] max-h-[600px] min-h-[280px] w-auto sm:h-[54vh]">
+            <Mascot className="h-full w-auto" />
+          </div>
         </div>
 
         <p className="max-w-xl font-serif text-lg sm:text-xl italic text-silver-300/90 animate-rise" style={{ animationDelay: '0.6s' }}>
