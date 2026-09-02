@@ -23,7 +23,7 @@ npm run lint     # oxlint
 
 ```
 src/
-  components/       # Componentes reutilizáveis (ex.: Btn, CrownLogo, Mascot, ...)
+  components/       # Componentes reutilizáveis (ex.: Btn, BrokenCrownEmblem, Mascot, ...)
   config.js         # Constantes (endereço do Discord)
   App.jsx           # Composição das seções
   index.css         # Tema Tailwind + estilos globais/custom

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Btn from './Btn'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -24,17 +24,29 @@ const FULL_LAWS = [
 
 export default function Leis() {
   const [open, setOpen] = useState(false)
+  const modalRef = useRef(null)
+  const triggerRef = useRef(null)
 
   useEffect(() => {
     if (!open) return
     document.body.style.overflow = 'hidden'
-    const onKey = (e) => e.key === 'Escape' && setOpen(false)
+    // Focar o diálogo ao abrir e restaurar foco ao fechar
+    const previous = document.activeElement
+    const fallbackTrigger = triggerRef.current
+    const timer = setTimeout(() => modalRef.current?.focus(), 0)
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
     window.addEventListener('keydown', onKey)
     return () => {
+      clearTimeout(timer)
       document.body.style.overflow = ''
       window.removeEventListener('keydown', onKey)
+      ;(previous || fallbackTrigger)?.focus()
     }
   }, [open])
+
+  const close = () => setOpen(false)
 
   return (
     <section id="leis" className="relative overflow-hidden py-24 sm:py-32">
@@ -61,7 +73,13 @@ export default function Leis() {
 
         <Reveal delay={200}>
           <div className="mt-12 flex justify-center">
-            <Btn href="#" variant="outline" size="md" onClick={(e) => { e.preventDefault(); setOpen(true) }}>
+            <Btn
+              ref={triggerRef}
+              href="#"
+              variant="outline"
+              size="md"
+              onClick={(e) => { e.preventDefault(); setOpen(true) }}
+            >
               Ler Todas as Leis
             </Btn>
           </div>
@@ -74,23 +92,29 @@ export default function Leis() {
           className="fixed inset-0 z-[70] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
+          aria-labelledby="leis-modal-title"
+          onMouseDown={(e) => { if (e.target === e.currentTarget) close() }}
         >
           <div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={() => setOpen(false)}
+            onClick={close}
           />
-          <div className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-lg metal-border bg-coal-900 p-8 sm:p-10">
+          <div
+            ref={modalRef}
+            tabIndex={-1}
+            className="relative max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-lg metal-border bg-coal-900 p-8 outline-none sm:p-10"
+          >
             <button
-              onClick={() => setOpen(false)}
+              onClick={close}
               aria-label="Fechar"
               className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border border-gold-600/40 text-gold-300 transition-colors hover:bg-gold-500/10 hover:border-gold-400"
             >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
 
-            <h3 className="pr-8 font-display text-2xl font-bold gold-gradient-text sm:text-3xl">
+            <h3 id="leis-modal-title" className="pr-8 font-display text-2xl font-bold gold-gradient-text sm:text-3xl">
               Leis do Reino
             </h3>
             <div className="my-6 h-px bg-gradient-to-r from-gold-500/60 to-transparent" />

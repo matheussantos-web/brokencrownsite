@@ -7,7 +7,7 @@ const PILLARS = [
     title: 'Evolução',
     desc: 'Todos devem ter oportunidade de aprender e melhorar.',
     icon: (
-      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 20h16M6 20l6-10 4 5 2-3M18 20l-2-3" />
       </svg>
     ),
@@ -16,7 +16,7 @@ const PILLARS = [
     title: 'União',
     desc: 'A guilda cresce quando seus membros crescem juntos.',
     icon: (
-      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="9" cy="8" r="3.5" />
         <circle cx="15" cy="8" r="3.5" />
         <path d="M3 19v-1.5c0-2 2.5-3.5 6-3.5s6 1.5 6 3.5V19M15 15c3.2 0 6 1.5 6 3.5V19" />
@@ -27,7 +27,7 @@ const PILLARS = [
     title: 'Respeito',
     desc: 'Novatos e veteranos merecem o mesmo respeito.',
     icon: (
-      <svg viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-9 w-9" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 21s-7-4.5-9-9C1.5 8 4 5 7 5c2 0 3.5 1 5 2.5C13.5 6 15 5 17 5c3 0 5.5 3 4 7-2 4.5-9 9-9 9z" />
         <path d="M12 8l1.5 3 3 .5-2 2 .5 3-3-1.5-3 1.5.5-3-2-2 3-.5z" />
       </svg>

@@ -22,9 +22,9 @@ export default function Recrutamento() {
         <SectionHeading kicker="Recrutamento" title="A Coroa Caiu." />
 
         <Reveal>
-          <h2 className="mt-2 text-center font-display text-4xl sm:text-6xl font-black gold-gradient-text leading-tight">
+          <p className="mt-2 text-center font-display text-4xl sm:text-6xl font-black gold-gradient-text leading-tight" role="text">
             NÓS NOS LEVANTAMOS.
-          </h2>
+          </p>
         </Reveal>
 
         <Reveal delay={120}>
@@ -52,7 +52,7 @@ export default function Recrutamento() {
                 className="flex items-center gap-3 rounded-md border border-gold-600/25 bg-coal-800/50 px-5 py-4 text-left transition-colors hover:border-gold-500/50"
               >
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-gold-500 text-gold-400">
-                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <svg aria-hidden="true" viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 13l4 4L19 7" />
                   </svg>
                 </span>
@@ -81,7 +81,7 @@ export default function Recrutamento() {
 
 function CrownMark() {
   return (
-    <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 18L3 9L7 13L9 6L12 10L15 6L17 13L21 9L21 18Z" fill="currentColor" opacity="0.2" />
       <path d="M15 15l3-3m3-3l0-3" stroke="currentColor" opacity="0.7" />
       <circle cx="21" cy="8" r="1" fill="currentColor" />

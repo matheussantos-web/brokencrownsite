@@ -1,13 +1,6 @@
 import BrokenCrownEmblem from './BrokenCrownEmblem'
-
-const LINKS = [
-  { href: '#inicio', label: 'Início' },
-  { href: '#guilda', label: 'A Guilda' },
-  { href: '#conteudos', label: 'Conteúdos' },
-  { href: '#recrutamento', label: 'Recrutamento' },
-  { href: '#leis', label: 'Leis do Reino' },
-  { href: '#discord', label: 'Discord' },
-]
+import Ornament from './Ornament'
+import { NAV_LINKS } from '../config'
 
 export default function Footer() {
   return (
@@ -18,27 +11,21 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="flex flex-col items-center text-center">
           <BrokenCrownEmblem className="h-16 w-16 mb-5" id="foot" />
-          <h3 className="font-display text-3xl sm:text-4xl font-black leading-none">
+          <p className="font-display text-3xl sm:text-4xl font-black leading-none" role="text">
             <span className="block tracking-[0.2em] silver-forged">BROKEN</span>
             <span className="block mt-1 tracking-[0.2em] gold-forged">CROWN</span>
-          </h3>
+          </p>
           <p className="mt-4 font-display text-xs sm:text-sm tracking-[0.35em] uppercase text-silver-400">
             The Crown Fell. We Rose.
           </p>
         </div>
 
         {/* Ornament */}
-        <div className="mt-10 flex items-center justify-center gap-3" aria-hidden="true">
-          <span className="h-px w-24 bg-gradient-to-r from-transparent to-gold-600/40" />
-          <svg viewBox="0 0 40 12" className="h-4 w-10" fill="#d4af37">
-            <path d="M20 0 L22 4 L27 3 L24 8 L28 12 L23 10 L20 13 L17 10 L12 12 L16 8 L13 3 L18 4 Z" />
-          </svg>
-          <span className="h-px w-24 bg-gradient-to-l from-transparent to-gold-600/40" />
-        </div>
+        <Ornament className="mt-10" />
 
-        <nav className="mt-10">
+        <nav className="mt-10" aria-label="Rodapé">
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {LINKS.map((l) => (
+            {NAV_LINKS.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}

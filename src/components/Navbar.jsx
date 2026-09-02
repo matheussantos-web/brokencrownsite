@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react'
 import BrokenCrownEmblem from './BrokenCrownEmblem'
-import { DISCORD_URL } from '../config'
-
-const LINKS = [
-  { href: '#inicio', label: 'Início' },
-  { href: '#guilda', label: 'A Guilda' },
-  { href: '#conteudos', label: 'Conteúdos' },
-  { href: '#recrutamento', label: 'Recrutamento' },
-  { href: '#leis', label: 'Leis do Reino' },
-  { href: '#discord', label: 'Discord' },
-]
+import { DISCORD_URL, NAV_LINKS } from '../config'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -28,7 +19,7 @@ export default function Navbar() {
         scrolled ? 'bg-coal-950/85 backdrop-blur-md shadow-[0_2px_30px_rgba(0,0,0,0.7)] border-b border-gold-500/15' : 'bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8" aria-label="Principal">
         <a href="#inicio" className="flex items-center gap-3">
           <BrokenCrownEmblem className="h-10 w-10 sm:h-12 sm:w-12" id="nav" />
           <div className="leading-none">
@@ -42,7 +33,7 @@ export default function Navbar() {
         </a>
 
         <ul className="hidden items-center gap-7 lg:flex">
-          {LINKS.map((l) => (
+          {NAV_LINKS.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
@@ -70,7 +61,9 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Abrir menu"
+          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
         >
           <span className={`block h-0.5 w-6 bg-gold-400 transition-transform ${open ? 'translate-y-2 rotate-45' : ''}`} />
           <span className={`block h-0.5 w-6 bg-gold-400 transition-opacity ${open ? 'opacity-0' : ''}`} />
@@ -80,12 +73,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-menu"
         className={`lg:hidden overflow-hidden bg-coal-950/95 backdrop-blur-md border-b border-gold-500/15 transition-all duration-300 ${
           open ? 'max-h-[26rem]' : 'max-h-0'
         }`}
       >
         <ul className="flex flex-col gap-1 px-6 py-4">
-          {LINKS.map((l) => (
+          {NAV_LINKS.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}

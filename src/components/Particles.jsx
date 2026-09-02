@@ -30,7 +30,7 @@ export default function Particles({ count = 45 }) {
             boxShadow: p.gold
               ? '0 0 8px 1px rgba(212,175,55,0.55)'
               : '0 0 6px 1px rgba(200,200,200,0.3)',
-            animation: `ember ${p.duration}s linear ${p.delay}s infinite`,
+            animation: `emberDrift ${p.duration}s linear ${p.delay}s infinite`,
           }}
         />
       ))}
