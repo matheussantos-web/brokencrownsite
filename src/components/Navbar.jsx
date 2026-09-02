@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react'
 import BrokenCrownEmblem from './BrokenCrownEmblem'
+import LoginDiscordButton from './LoginDiscordButton'
+import useAuth from '../hooks/useAuth'
+import { navigate } from '../lib/router'
 import { DISCORD_URL, NAV_LINKS } from '../config'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { user, isAuthenticated, login, logout } = useAuth()
+
+  const goMembers = () => {
+    setOpen(false)
+    navigate('/membros')
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30)
@@ -46,7 +55,34 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-4 lg:flex">
+          <button
+            type="button"
+            onClick={goMembers}
+            className="font-display text-xs tracking-[0.2em] uppercase text-silver-400 transition-colors hover:text-gold-300"
+          >
+            Área de Membros
+          </button>
+          {isAuthenticated ? (
+            <div className="flex items-center gap-2 rounded border border-gold-600/25 bg-coal-900/50 px-3 py-1.5">
+              <span className="max-w-[8rem] truncate font-display text-xs tracking-wider text-gold-300">
+                {user?.global_name || user?.username}
+              </span>
+              <button
+                type="button"
+                onClick={logout}
+                className="font-display text-[10px] uppercase tracking-[0.2em] text-silver-500 hover:text-gold-300"
+              >
+                Sair
+              </button>
+            </div>
+          ) : (
+            <LoginDiscordButton
+              onLogin={login}
+              loading={false}
+              className="rounded border border-gold-600/40 bg-coal-900/40 px-4 py-2 text-[11px] text-gold-300 hover:border-gold-400 hover:bg-gold-500/10"
+            />
+          )}
           <a
             href={DISCORD_URL}
             target="_blank"
@@ -90,6 +126,15 @@ export default function Navbar() {
               </a>
             </li>
           ))}
+          <li>
+            <button
+              type="button"
+              onClick={goMembers}
+              className="block w-full py-3 text-left font-display text-sm tracking-[0.2em] uppercase text-gold-400 hover:text-gold-300 border-b border-white/5"
+            >
+              Área de Membros
+            </button>
+          </li>
         </ul>
         {/* Discord CTA */}
         <div className="px-6 pb-6">
