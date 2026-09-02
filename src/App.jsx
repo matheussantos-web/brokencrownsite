@@ -12,6 +12,7 @@ const Recrutamento = lazy(() => import('./components/Recrutamento'))
 const Leis = lazy(() => import('./components/Leis'))
 const DiscordSec = lazy(() => import('./components/DiscordSec'))
 const Hall = lazy(() => import('./components/Hall'))
+const CampoDeBatalha = lazy(() => import('./components/CampoDeBatalha'))
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Recrutamento />
           <Leis />
           <DiscordSec />
+          <CampoDeBatalha />
           <Hall />
         </Suspense>
       </main>

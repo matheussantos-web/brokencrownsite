@@ -1,6 +1,7 @@
 import Mascot from './Mascot'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
+import GuildStatus from './GuildStatus'
 
 export default function Guilda() {
   return (
@@ -12,6 +13,12 @@ export default function Guilda() {
           kicker="A Guilda"
           title="Um Reino Forjado na União"
         />
+
+        <Reveal delay={100}>
+          <div className="metal-border mx-auto mt-10 max-w-md rounded-lg bg-coal-900/60 px-6 py-5 backdrop-blur-sm">
+            <GuildStatus />
+          </div>
+        </Reveal>
 
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal className="order-2 lg:order-1">
