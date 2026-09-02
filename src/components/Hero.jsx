@@ -9,14 +9,17 @@ export default function Hero() {
     <section id="inicio" className="relative flex min-h-screen flex-col overflow-hidden">
       {/* ---- Background: official banner (ruined kingdom) ---- */}
       <div className="absolute inset-0 -z-20">
-        <img
-          src="images/banner.png"
-          alt=""
-          aria-hidden="true"
-          fetchPriority="high"
-          decoding="async"
-          className="h-full w-full object-cover object-center"
-        />
+        <picture>
+          <source srcSet="images/banner.webp" type="image/webp" />
+          <img
+            src="images/banner.png"
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover object-center"
+          />
+        </picture>
         {/* Opacity grade — manter fundo escuro e suave */}
         <div className="absolute inset-0 bg-coal-950/70 mix-blend-multiply" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(7,7,7,0.35)_55%,#070707_100%)]" />

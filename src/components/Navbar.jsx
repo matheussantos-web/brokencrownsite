@@ -81,7 +81,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`lg:hidden overflow-hidden bg-coal-950/95 backdrop-blur-md border-b border-gold-500/15 transition-all duration-300 ${
-          open ? 'max-h-96' : 'max-h-0'
+          open ? 'max-h-[26rem]' : 'max-h-0'
         }`}
       >
         <ul className="flex flex-col gap-1 px-6 py-4">
@@ -97,6 +97,18 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
+        {/* Discord CTA */}
+        <div className="px-6 pb-6">
+          <a
+            href={DISCORD_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="flex items-center justify-center gap-2.5 font-display text-sm font-semibold tracking-[0.2em] uppercase text-coal-950 bg-gradient-to-b from-gold-200 via-gold-400 to-gold-600 border border-gold-300/90 px-6 py-3.5 shadow-[0_0_30px_rgba(212,175,55,0.35),inset_0_1px_0_rgba(255,255,255,0.6)] hover:brightness-110 transition-all"
+          >
+            Entrar no Discord
+          </a>
+        </div>
       </div>
     </header>
   )

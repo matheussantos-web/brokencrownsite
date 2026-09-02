@@ -8,15 +8,18 @@ export default function Mascot({ className = '' }) {
       />
 
       {/* Mascote oficial da Broken Crown (imagem transparente) */}
-      <img
-        src="images/mascote.png"
-        alt="Guerreiro da Broken Crown"
-        width="1151"
-        height="1367"
-        loading="lazy"
-        decoding="async"
-        className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.85)]"
-      />
+      <picture>
+        <source srcSet="images/mascote.webp" type="image/webp" />
+        <img
+          src="images/mascote.png"
+          alt="Guerreiro da Broken Crown"
+          width="1151"
+          height="1367"
+          loading="lazy"
+          decoding="async"
+          className="relative z-10 h-auto w-full object-contain drop-shadow-[0_30px_50px_rgba(0,0,0,0.85)]"
+        />
+      </picture>
     </div>
   )
 }
