@@ -1,0 +1,31 @@
+{
+  "name": "BROKEN CROWN — Guilda de Albion Online",
+  "short_name": "Broken Crown",
+  "description": "A COROA CAIU. NÓS NOS LEVANTAMOS. Guilda de Albion Online forjada na união.",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070707",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

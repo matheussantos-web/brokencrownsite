@@ -10,9 +10,10 @@ export default function Hero() {
       {/* ---- Background: official banner (ruined kingdom) ---- */}
       <div className="absolute inset-0 -z-20">
         <picture>
+          <source srcSet="images/banner.avif" type="image/avif" />
           <source srcSet="images/banner.webp" type="image/webp" />
           <img
-            src="images/banner.png"
+            src="images/banner.webp"
             alt=""
             aria-hidden="true"
             fetchPriority="high"

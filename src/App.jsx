@@ -1,13 +1,17 @@
+import { Suspense, lazy } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Guilda from './components/Guilda'
-import Conteudos from './components/Conteudos'
-import Filosofia from './components/Filosofia'
-import Recrutamento from './components/Recrutamento'
-import Leis from './components/Leis'
-import DiscordSec from './components/DiscordSec'
-import Hall from './components/Hall'
 import Footer from './components/Footer'
+
+// Code Splitting: seções abaixo da dobra carregam sob demanda
+// (Hero e Navbar permanecem síncronos para pronto-pintura do LCP)
+const Guilda = lazy(() => import('./components/Guilda'))
+const Conteudos = lazy(() => import('./components/Conteudos'))
+const Filosofia = lazy(() => import('./components/Filosofia'))
+const Recrutamento = lazy(() => import('./components/Recrutamento'))
+const Leis = lazy(() => import('./components/Leis'))
+const DiscordSec = lazy(() => import('./components/DiscordSec'))
+const Hall = lazy(() => import('./components/Hall'))
 
 function App() {
   return (
@@ -15,13 +19,21 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Guilda />
-        <Conteudos />
-        <Filosofia />
-        <Recrutamento />
-        <Leis />
-        <DiscordSec />
-        <Hall />
+        <Suspense
+          fallback={
+            <div className="flex min-h-[50vh] items-center justify-center">
+              <div className="h-10 w-10 animate-spin rounded-full border-2 border-gold-600/40 border-t-gold-400" role="status" aria-label="Carregando" />
+            </div>
+          }
+        >
+          <Guilda />
+          <Conteudos />
+          <Filosofia />
+          <Recrutamento />
+          <Leis />
+          <DiscordSec />
+          <Hall />
+        </Suspense>
       </main>
       <Footer />
     </div>

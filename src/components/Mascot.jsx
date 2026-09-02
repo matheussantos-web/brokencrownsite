@@ -9,9 +9,10 @@ export default function Mascot({ className = '' }) {
 
       {/* Mascote oficial da Broken Crown (imagem transparente) */}
       <picture>
+        <source srcSet="images/mascote.avif" type="image/avif" />
         <source srcSet="images/mascote.webp" type="image/webp" />
         <img
-          src="images/mascote.png"
+          src="images/mascote.webp"
           alt="Guerreiro da Broken Crown"
           width="1151"
           height="1367"

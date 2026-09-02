@@ -7,4 +7,16 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: './',
+  build: {
+    rollupOptions: {
+      output: {
+        // Separa o vendor React para melhor cache (muda menos que o app)
+        manualChunks(id) {
+          if (id.includes('node_modules/react') || id.includes('/react-dom')) {
+            return 'react'
+          }
+        },
+      },
+    },
+  },
 })

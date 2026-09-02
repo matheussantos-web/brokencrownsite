@@ -29,7 +29,9 @@ export default function Reveal({
     <Tag
       ref={ref}
       className={`transition-all duration-1000 ease-out will-change-transform ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+        visible
+          ? 'opacity-100 translate-y-0 blur-none scale-100'
+          : 'opacity-0 translate-y-8 blur-[3px] scale-[0.985]'
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
